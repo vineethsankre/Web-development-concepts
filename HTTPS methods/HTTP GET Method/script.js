@@ -6,7 +6,7 @@ let loadingEl = document.getElementById("loading");
 function sendGetHTTPRequest(){
     let url = "https://gorest.co.in/public-api/users";
     let options ={
-        mathod: "GET"
+        method: "GET"
     };
     loadingEl.classList.remove("d-none");
     requestStatusEl.classList.add("d-none");
