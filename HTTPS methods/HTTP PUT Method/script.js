@@ -15,7 +15,7 @@ function sendPutRequest() {
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
-            Authorization: "Bearer b10dc007b1abd36777f363fa7ac1f6e856e106003dd79ce24e3d766247e5b227"
+            Authorization: "Bearer token"
         },
         body: requestBody
     };
