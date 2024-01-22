@@ -31,6 +31,10 @@ emailEl.addEventListener("blur", function(event) {
   formData.email = event.target.value;
 });
 
+workingStatusEl.addEventListener("change", function(event) {
+  formData.status = event.target.value;
+});
+
 myFormEl.addEventListener("submit", function(event) {
   event.preventDefault();
 });
