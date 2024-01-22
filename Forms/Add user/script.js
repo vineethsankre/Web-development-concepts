@@ -6,6 +6,8 @@ let nameErrMsgEl = document.getElementById("nameErrMsg");
 let emailEl = document.getElementById("email");
 let emailErrMsgEl = document.getElementById("emailErrMsg");
 
+let workingStatusEl = document.getElementById("status");
+
 let formData = {
   name: "",
   email: "",
