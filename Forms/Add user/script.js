@@ -6,12 +6,18 @@ let nameErrMsgEl = document.getElementById("nameErrMsg");
 let emailEl = document.getElementById("email");
 let emailErrMsgEl = document.getElementById("emailErrMsg");
 
-nameEl.addEventListener("blur", function(event) {
+let formData = {
+  name: "",
+  email: "",
+};
+
+nameEl.addEventListener("change", function(event) {
   if (event.target.value === "") {
     nameErrMsgEl.textContent = "Required*";
   } else {
     nameErrMsgEl.textContent = "";
   }
+  formData.name = event.target.value;
 });
 
 emailEl.addEventListener("blur", function(event) {
@@ -20,6 +26,7 @@ emailEl.addEventListener("blur", function(event) {
   } else {
     emailErrMsgEl.textContent = "";
   }
+  formData.email = event.target.value;
 });
 
 myFormEl.addEventListener("submit", function(event) {
