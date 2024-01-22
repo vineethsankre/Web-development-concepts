@@ -7,10 +7,14 @@ let emailEl = document.getElementById("email");
 let emailErrMsgEl = document.getElementById("emailErrMsg");
 
 let workingStatusEl = document.getElementById("status");
+let genderMaleEl = document.getElementById("genderMale");
+let genderFemaleEl = document.getElementById("genderFemale");
 
 let formData = {
   name: "",
   email: "",
+  status:"Active",
+  gender:"Male"
 };
 
 nameEl.addEventListener("change", function(event) {
@@ -33,6 +37,14 @@ emailEl.addEventListener("blur", function(event) {
 
 workingStatusEl.addEventListener("change", function(event) {
   formData.status = event.target.value;
+});
+
+genderMaleEl.addEventListener("change", function(event) {
+  formData.gender = event.target.value;
+});
+
+genderFemaleEl.addEventListener("change", function(event) {
+  formData.gender = event.target.value;
 });
 
 myFormEl.addEventListener("submit", function(event) {
