@@ -47,6 +47,32 @@ genderFemaleEl.addEventListener("change", function(event) {
   formData.gender = event.target.value;
 });
 
+function submitFormData(formData){
+  let options = {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json",
+      Accept:"application/json",
+      Authorization:"Bearer token",
+    },
+    body: JSON.stringify(formData),
+  };
+  let url = "https://gorest.co.in/public-api/users";
+  fetch(url, options)
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(jsonData){
+      console.log(jsonData);
+      if (jsonData.code === 422){
+        if (jsonData.data[0].message === "has already been taken"){
+          emailErrMsgEl.textContent = "Email Already Exists";
+        }
+      }
+    });
+}
+
 myFormEl.addEventListener("submit", function(event) {
   event.preventDefault();
+  submitFormData(formData);
 });
