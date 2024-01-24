@@ -2,7 +2,7 @@
 
 .bg-container {
     background-image: linear-gradient(to right, #d3d3d3, #e0e0e0);
-    border: 36px;
+    border-radius: 36px;
 }
 
 .pet-heading {
