@@ -42,7 +42,7 @@ function sendRequest(formData){
         headers: {
             'Content-Type': 'application/json',
             Accept: "application/json",
-            Authorization : "Bearer b325f5620e1ab4792563a93e837b3842235ec5699948a7c5395d371db086da8a"
+            Authorization : "Bearer token"
         },
         body: requestBody
     };
