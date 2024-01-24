@@ -12,27 +12,29 @@
             <div class="bg-container col-12">
                 <h1 class="text-center">Answer the Question</h1>
                 <div class="question-card p-3">
-                    <h1>What is the capital of India?</h1>
-                    <div>
-                        <input type = radio id="cityHyderabad" name="city"/>
-                        <label for="cityHyderabad" class="m-2">Hyderabad</label>
-                    </div>
-                    <div>
-                        <input type = radio id="cityChennai" name="city"/>
-                        <label for="cityChennai" class="m-2">Chennai</label>
-                    </div>
-                    <div>
-                        <input type = radio id="cityDelhi" name="city"/>
-                        <label for="cityDelhi" class="m-2">Delhi</label>
-                    </div>
-                    <div>
-                        <input type = radio id="cityMumbai" name="city"/>
-                        <label for="cityMumbai" class="m-2">Mumbai</label>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
-                    <p class="mt-3" id="resultMsg">Qrong Answer</p>
+                    <form id="questionsForm">
+                        <h1>What is the capital of India?</h1>
+                        <div>
+                            <input type = radio id="cityHyderabad" name="city"/>
+                            <label for="cityHyderabad" class="m-2">Hyderabad</label>
+                        </div>
+                        <div>
+                            <input type = radio id="cityChennai" name="city"/>
+                            <label for="cityChennai" class="m-2">Chennai</label>
+                        </div>
+                        <div>
+                            <input type = radio id="cityDelhi" name="city"/>
+                            <label for="cityDelhi" class="m-2">Delhi</label>
+                        </div>
+                        <div>
+                            <input type = radio id="cityMumbai" name="city"/>
+                            <label for="cityMumbai" class="m-2">Mumbai</label>
+                        </div>
+                        <div class="mt-1">
+                            <button id="submitBtn" class="btn btn-primary">Submit</button>
+                        </div>
+                        <p class="mt-3" id="resultMsg">Qrong Answer</p>
+                    </form>
                 </div>
             </div>
         </div>
