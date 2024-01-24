@@ -6,53 +6,58 @@ let requestMethodEl = document.getElementById("requestMethod");
 let requestBodyEl = document.getElementById("requestBody");
 let responseBodyEl = document.getElementById("responseBody");
 
-requestMethodEl.addEventListener("change", function () {
-    requestUrlErrMsgEl.textContent = "";
-});
+let formData = {
+    requestUrl : "https://gorest.co.in/public-api/users",
+    requestMethod : "POST",
+    requestBody : "" 
+};
 
-function submitForm(event) {
-    event.preventDefault();
-    requestUrlErrMsgEl.textContent = "";
+requestUrlEl.addEventListener("change", function(event){
+    formData.requestUrl = event.target.value;
+})
 
-    if (requestUrlEl.value.trim() === "") {
+requestMethodEl.addEventListener("change", function(event){
+    formData.requestMethod = event.target.value;
+})
+
+requestBodyEl.addEventListener("change", function(event){
+    formData.requestBody = event.target.value;
+})
+
+function validateRequestUrl(formData){
+    let {requestUrl} = formData;
+    if (requestUrl === ""){
         requestUrlErrMsgEl.textContent = "Required*";
-        return;
+    } else{
+        requestUrlErrMsgEl.textContent = "";
     }
-
-    let data = {
-        id: 1,
-        name: "",
-        email: "",
-        gender: "",
-        status: "",
-    };
-
+};
+function sendRequest(formData){
+    let {requestUrl, requestMethod, requestBody} = formData;
     let options = {
-        method: requestMethodEl.value,
+        method: requestMethod,
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             Accept: "application/json",
-            Authorization: "Bearer b10dc007b1abd36777f363fa7ac1f6e856e106003dd79ce24e3d766247e5b227",
+            Authorization : "Bearer b325f5620e1ab4792563a93e837b3842235ec5699948a7c5395d371db086da8a"
         },
-        body: data,
+        body: requestBody
     };
-
-    fetch(requestUrlEl.value, options)
-        .then((response) => {
-            responseStatusEl.value = response.status;
-            if (response.ok) {
-                return response.json().then((responseData) => {
-                    responseBodyEl.value = JSON.stringify(responseData, null, 2);
-                });
-            } else {
-                return response.text().then((errorMessage) => {
-                    responseBodyEl.value = errorMessage;
-                });
-            }
+    fetch(requestUrl, options)
+        .then(function(response){
+            return response.json();
         })
-        .catch((error) => {
-            responseBodyEl.value = "Error: " + error.message;
-        });
+        .then(function(jsonData){
+            let statusCode = jsonData.code;
+            let responseBody = jsonData;
+            responseStatusEl.value = statusCode;
+            responseBodyEl.value = responseBody;
+
+        });  
 }
 
-consoleFormEl.addEventListener("submit", submitForm);
+consoleFormEl.addEventListener("submit", function(event){
+    event.preventDefault();
+    validateRequestUrl(formData);
+    sendRequest(formData);
+})
