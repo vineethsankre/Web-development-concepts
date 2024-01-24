@@ -1,9 +1,12 @@
 let consoleFormEl = document.getElementById("consoleForm");
+
 let requestUrlEl = document.getElementById("requestUrl");
-let responseStatusEl = document.getElementById("responseStatus");
 let requestUrlErrMsgEl = document.getElementById("requestUrlErrMsg");
+
 let requestMethodEl = document.getElementById("requestMethod");
 let requestBodyEl = document.getElementById("requestBody");
+
+let responseStatusEl = document.getElementById("responseStatus");
 let responseBodyEl = document.getElementById("responseBody");
 
 let formData = {
