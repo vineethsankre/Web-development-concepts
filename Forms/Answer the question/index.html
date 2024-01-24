@@ -5,35 +5,36 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css"/>
   </head>
   <body>
     <div class="container">
         <div class="row">
             <div class="bg-container col-12 p-4">
-                <h1 class="mb-4 text-center">Answer the Question</h1>
-                <form id="questionsForm">
-                    <h1>What is the capital of India?</h1>
+                <h1 class="heading mb-4 text-center">Answer the Question</h1>
+                <form class="questions-form" id="questionsForm">
+                    <h1 class="question">What is the capital of India?</h1>
                     <div id="cities" class="d-flex flex-column ml-4">
                         <div class="mt-2 mb-2">
                             <input type = radio value="Hyderabad" id="cityHyderabad" name="city"/>
-                            <label for="cityHyderabad" class="m-2">Hyderabad</label>
+                            <label for="cityHyderabad" class="option-label m-2">Hyderabad</label>
                         </div>
                         <div class="mb-2">
                             <input type = radio value="Chennai"  id="cityChennai" name="city"/>
-                            <label for="cityChennai" class="m-2">Chennai</label>
+                            <label for="cityChennai" class="option-label m-2">Chennai</label>
                         </div>
                         <div class="mb-2">
                             <input type = radio value="Delhi"  id="cityDelhi" name="city"/>
-                            <label for="cityDelhi" class="m-2">Delhi</label>
+                            <label for="cityDelhi" class="option-label m-2">Delhi</label>
                         </div>
                         <div class="mb-2">
                             <input type = radio value="Mumbai"  id="cityMumbai" name="city"/>
-                            <label for="cityMumbai" class="m-2">Mumbai</label>
+                            <label for="cityMumbai" class="option-label m-2">Mumbai</label>
                         </div>
                     </div>
                     <div class="mt-1">
                         <button id="submitBtn" class="btn btn-primary" type="submit">Submit</button>
-                        <p class="mt-4" id="resultMsg"></p>
+                        <p class="result-msg mt-4" id="resultMsg"></p>
                     </div>
                 </form>
             </div>
